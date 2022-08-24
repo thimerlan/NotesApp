@@ -1,0 +1,148 @@
+.card {
+  position: relative;
+  border: 3px solid #212529;
+  padding: 30px;
+  width: 350px;
+  height: 100%;
+  border-radius: 10px;
+}
+.InputField {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+section {
+  position: relative;
+  bottom: 18px;
+  border-bottom: 2px dashed #294b6c7e;
+}
+
+section h1 {
+  text-transform: uppercase;
+}
+
+.box {
+  position: relative;
+  width: 280px;
+  margin-bottom: 25px;
+}
+
+.box input {
+  width: 100%;
+  padding: 10px 0 5px;
+  color: #212529;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  background: transparent;
+  box-shadow: none;
+  color: #fefe;
+}
+
+.box span {
+  position: absolute;
+  left: 0;
+  color: #adb5bd;
+  padding: 10px 0 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span {
+  color: #1a344f;
+  transform: translatey(-20px);
+  font-size: 0.8em;
+}
+
+.box i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #495057;
+  overflow: hidden;
+}
+
+.box i::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    #f88195,
+    #f67280,
+    #7dfee3,
+    #6c5b7b,
+    #355c7d,
+    #355c7d,
+    #6c5b7b,
+    #7dfee3,
+    #f67280,
+    #f88195
+  );
+  animation: animate 0.9s linear infinite;
+  transition: 0.5s;
+}
+
+.box input:valid ~ i::before,
+.box input:focus ~ i::before {
+  left: 0;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 280px;
+  }
+}
+
+.submit-btn {
+  position: absolute;
+  bottom: -26px;
+  outline: none;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  color: #ffff;
+  background: #1ddb13;
+  font-size: 1em;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.submit-btn-off {
+  transition: 0.2s ease-in-out;
+  cursor: not-allowed;
+  position: absolute;
+  bottom: -26px;
+  outline: none;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  color: #ffff;
+  font-size: 1em;
+  border-radius: 0.25rem;
+
+  background: #1a8f14eb;
+}
+.InputField {
+  animation: TbodyAnime 0.5s linear 1;
+}
+@keyframes TbodyAnime {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

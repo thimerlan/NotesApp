@@ -1,38 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" !important;
+}
 .App {
+  max-width: 1500px;
+  width: 90%;
+  margin: 0 auto;
+  width: 100% !important;
+}
+body {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  background: #525252;
+  background: -webkit-linear-gradient(to right, #3d72b4, #525252);
+  background: linear-gradient(to right, #3d72b4, #525252);
+  overflow-x: hidden;
+}
+
+table {
+  width: 800px;
+
+  margin-top: 80px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  font-size: 18px;
+  border-radius: 1ex;
+}
+tbody {
+  overflow-x: hidden;
+}
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  border-radius: 1ex;
+  text-align: center;
+  transition: 0.3s;
+}
+
+thead th {
+  margin: 1px 10px;
+
+  background-color: #087f5b;
+  color: #fff;
+  width: 25%;
+}
+
+tbody tr {
+  border-radius: 1ex;
+}
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e9ecef;
+}
+.container {
+  animation: TbodyAnime 0.5s linear 1;
+}
+@keyframes TbodyAnime {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ========= */ /* ========= */ /* ========= */
+
+.container {
+  padding: 3rem;
+  overflow: auto;
+}
+.time {
+  font-weight: 760;
+  color: #222;
+  font-size: 16px;
+}
+td {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  margin: 0 auto;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ======== */
+textarea {
+  padding-top: 30px !important;
+  margin: 0 !important;
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  resize: none;
+  height: 8vh;
+  color: #222 !important;
+  font-weight: 555;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+td button {
+  background-color: transparent;
+  font-size: 20px;
+  transition: 0.3s ease-in;
 }
-
-.App-link {
-  color: #61dafb;
+td button:hover {
+  text-shadow: 1px 1px 2px #087f5b;
+  transform: scale(1.2);
 }
+textarea::-webkit-scrollbar {
+  background-color: #08ce937b;
+  width: 8px;
+  border-radius: 1ex;
+}
+textarea::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 1ex;
+  background-color: #525252a3;
+}
+.edit {
+  background-color: #343a4085;
+  border-radius: 20px;
+}
+.edit-act {
+  transform: scale(1.2);
+  color: #087f5b;
+  background-color: #343a4085;
+  border-radius: 20px;
+}
+.success {
+  transform: scale(1.2);
+  color: #087f5b;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 20px;
+}
+td.line textarea {
+  text-decoration: line-through;
+  transition: 4s ease-in;
+  font-weight: 700;
 }
